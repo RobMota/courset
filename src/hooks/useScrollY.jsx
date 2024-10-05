@@ -1,1 +1,18 @@
-export const useScrollY = () => {};
+import { useEffect, useState } from "react";
+
+export const useScrollY = (targetScroll = 50) => {
+	const [scrolled, setScrolled] = useState(false)
+
+	useEffect(
+		() => {
+			const handleScroll = () => {
+				if (windows.scrollY > targetScroll) setScrolled(true)
+				else setScrolled(false)
+			}
+			window.addEventListener('scroll', handleScroll)
+			return () => window.addEventListener('scroll', handleScroll)
+
+		}
+		, [targetScroll])
+	return scrolled
+};

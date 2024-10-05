@@ -1,5 +1,9 @@
-const Hero = () => {
-    return <section id="home">Hero</section>;
-};
+import React from 'react'
 
-export default Hero;
+const Hero = () => {
+    return (
+        <section id="Home">Hero</section>
+    )
+}
+
+export default Hero
