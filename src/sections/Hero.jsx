@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 import { hero01, hero02, hero03, roundedText } from '../constants/images'
-import { leftSideVariants } from '../constants/motion'
+import { leftSideVariants, rightSideVariants } from '../constants/motion'
 
 const Hero = () => {
     return (
@@ -31,7 +31,11 @@ const Hero = () => {
                 </div>
 
                 {/* {==== Right Side ====} */}
-                <motion.div className='relative'>
+                <motion.div
+                    variants={rightSideVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className='relative'>
                     <div className='grid grid-cols-[minmax(70px, _230px)_minmax(70px,_250px)] grid-rows-[auto_auto] sm:grid-cols-[240px_270px] sm:grid-rows-[220px_220px] xl:grid-cols-[270px_300px] xl:grid-rows-[250px_250px] gap-4'>
                         <img src={hero01} className='rounded-4xl' />
                         <img src={hero02} className='row-span-2 rounded-4xl' />
